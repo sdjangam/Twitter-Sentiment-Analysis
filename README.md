@@ -13,3 +13,11 @@ Twitter as of now has three unique variants of APIs accessible, to be specific t
 The primary imperfection is that since individuals can unreservedly post their own substance, the nature of their sentiments can't be ensured. For instance, rather than imparting theme related insights, online spammers post spam on gatherings. Some spam are negligible by any stretch of the imagination, while others have immaterial conclusions otherwise called phony sentiments.
 The second defect is that ground truth of such online information isn't constantly accessible. A ground truth is progressively like a tag of a specific feeling, showing whether the sentiment is certain, negative, or unbiased. The Stanford Sentiment 140 Tweet Corpus is one of the datasets that has ground truth and is likewise open accessible. The corpus contains 1.6 million machine-labeled Twitter messages.
 Ventures discover this zone valuable to examine popular sentiment of their organization furthermore, items, or to examine consumer loyalty. Associations use this data to accumulate criticism about recently discharged items which supplements in enhancing further structure.
+
+# Tools and Methods
+# Background Theory 
+Sentiment analysis (SA) comprises many concepts common to the whole field of natural language processing in addition to many concepts from machine learning: the most relevant of these are described in this section.
+# Machine Learning 
+Machine learning has become a cornerstone in the field of SA. Most wellperforming systems incorporate some form of supervised machine learning. Here, we give a description of several machine learning algorithms relevant to the current state-of-the-art in sentiment analysis.
+
+
