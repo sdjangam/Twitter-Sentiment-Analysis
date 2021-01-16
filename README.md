@@ -18,6 +18,6 @@ Ventures discover this zone valuable to examine popular sentiment of their organ
 # Background Theory 
 Sentiment analysis (SA) comprises many concepts common to the whole field of natural language processing in addition to many concepts from machine learning: the most relevant of these are described in this section.
 # Machine Learning 
-Machine learning has become a cornerstone in the field of SA. Most wellperforming systems incorporate some form of supervised machine learning. Here, we give a description of several machine learning algorithms relevant to the current state-of-the-art in sentiment analysis
+Machine learning has become a cornerstone in the field of SA. Most wellperforming systems incorporate some form of supervised machine learning. Here, we give a description of several machine learning algorithms relevant to the current state-of-the-art in sentiment analysis.
 
 
