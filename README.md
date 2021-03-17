@@ -112,6 +112,108 @@ Term frequency-inverse document frequency (TF-IDF) is a common term weighting sc
 
 Here D is the entire corpus of documents, and N is the total number of documents in the corpus. As the number of documents where a term appears increases, the ratio inside the logarithm will decrease towards 1, making the idf approach 0.
 
+# Tools:Scikit Learn
+
+Scikit-learn is a framework for the Python programming language that offers machine learning models as well as tools for performing preprocessing and data analysis.
+Transformer objects are an essential part of performing machine learning with Scikit-learn, and are objects that may “clean, reduce, expand, or generate feature representations”.
+Scikit-learn provides a framework for pipelining machine learning tools, making it easy to chain tasks such as preprocessing and feature extraction together with a machine learning algorithm in a tidy manner. 
+One of the benefits of using the Pipeline framework is that it allows performing a parameter grid search across all the estimators in the Pipeline.
+
+# Tools:Pandas
+
+Pandas is an open-source library providing high-performance data structures and data analysis tools for the Python programming language. 
+It also includes tools for efficiently reading and writing data between in-memory data structures and different textual file formats, such as comma-separated value files.
+
+# Dataset Details
+
+Some people build a program to collect automatically a corpus of tweets based on two classes, “positive” and “negative”, by querying Twitter with two type of emoticons:
+Happy emoticons, such as “:)”, “:P”, “:­)” etc. 
+Sad emoticons, such as “:(“, “:’(”, “=(“.
+Others make their own dataset of tweets my collecting and annotating them manually which very long and fastidious.
+Our dataset consists of 1600000 tweets in English coming from two sources: Kaggle and Sentiment140.
+
+![image](https://user-images.githubusercontent.com/67232573/111506520-b6078d80-876f-11eb-937b-fc45d1160f79.png)
+![image](https://user-images.githubusercontent.com/67232573/111506560-be5fc880-876f-11eb-825b-bba664ded5ba.png)
+
+# Challenges with Twitter data
+
+The presence of acronyms "bf" or more complicated "APL". Does it means apple ? Apple (the company) ? 
+The presence of sequences of repeated characterssuch as "Juuuuuuuuuuuuuuuuussssst", "hmmmm". In general when we repeat several characters in a word, it is to emphasize it, to increase its impact. 
+The presence of emoticons, ":O", "T_T", ":¬|" and much more, give insights about user's moods. 
+Spelling mistakes and “urban grammar” like "im gunna" or "mi". 
+The presence of nouns such as "TV", "New Moon".
+Furthermore, we can also add, 
+People also indicate their moods, emotions, states, between two such as, *\cries*, *hummin*, *sigh*. 
+The negation, “can't”, “cannot”, “don't”, “haven't” that we need to handle like: “I don’t like chocolate”, “like” in this case is negative. 
+
+# Exploratory data analysis
+
+![image](https://user-images.githubusercontent.com/67232573/111506802-067eeb00-8770-11eb-89a5-09146d3c2e50.png)
+
+![image](https://user-images.githubusercontent.com/67232573/111506856-11398000-8770-11eb-8c46-c39e8848eb41.png)
+
+![image](https://user-images.githubusercontent.com/67232573/111506891-1ac2e800-8770-11eb-95e2-de8d31995fd0.png)
+
+
+# Pre-processing the dataset
+
+Cleaning up the HTML entities, and any other HTML tags
+Remove @mentions
+Remove URLs from tweets
+Convert short forms of negation words to their full forms. 
+"isn't":"is not", "aren't":"are not", "wasn't":"was not", "weren't":"were not", "haven't":"have not", "hasn't":"has not", "hadn't":"had not", "won't":"will not", "wouldn't":"would not", "don't":"do not", "doesn't":"does not", "didn't":"did not", "can't":"can not", "couldn't":"could not", "shouldn't":"should not", "mightn't":"might not", "mustn't":"must not”
+Decode UTF8 encoded symbols
+Replace non-alphabetic characters to spaces.
+Ignore words of size 1.
+Remove punctuations
+Perform word lemmatization
+
+# TF-IDF vectorization, train/test split, cross validation
+
+We start by splitting the data randomly into two parts: train and test. We use 80% data for training and the remaining for testing.
+We extract TFIDF features from tweets using TFIDF vectorizer. It converts a collection of raw documents to a matrix of TF-IDF features.
+Further, we use these features to learn multiple classifiers. For each type of classifier, we first train the classifier on train data and report the accuracy on test data. We also report cross validation accuracy with 10 folds.
+We report confusion matrix and accuracy values for each classifier.
+
+![image](https://user-images.githubusercontent.com/67232573/111507262-7c835200-8770-11eb-97bd-a889db4b1189.png)
+
+# Results
+
+![image](https://user-images.githubusercontent.com/67232573/111507414-a3418880-8770-11eb-8366-b918063fb7f1.png)
+
+We obtain the maximum accuracy using Linear SVM. However, also notice that logistic regression and random forests also lead to similar accuracy values. 
+However, simple classifiers like decision trees and nearest neighbors somehow cannot provide good results at all. 
+We used default hyper parameter settings for all the classifiers as provided by scikit learn. Tuning those hyper parameters can lead to further accuracy boost and we plan to explore that as part of future work.
+
+# Code and data
+
+The code is contained in the Jupyter notebook: TwitterSentimentAnalysis.ipynb
+To be able to run this, you must have Jupyter notebook installed on your machine.
+It can be run on any platform: Windows, Linux, Mac-OS
+The data is supplied as a csv file: TwitterSentimentAnalysis.csv
+Installations needed
+Anaconda prompt, Jupyter notebook, numpy, pandas, sklearn, NLTK.
+
+# Conclusion
+
+we discussed the problem of classifying whether a tweet is positive or negative.
+We performed classification using TF-IDF features and experimented with multiple classifiers.
+We used a Python library, Scikit Learn for building classifiers.
+The results show that Linear SVMs work well on our dataset.
+The solution can be useful for multiple stake-holders.
+
+# Future Work
+
+We could further improve our classifier 
+By trying to extract more features from the tweets, 
+By trying different kinds of features, 
+By tuning the parameters of the classifiers, or 
+We could try logistic regression without any regularization or try say L1 regularization. 
+For SVMs, we could try SVMs with various kinds of kernels or also vary the complexity parameter C and see the impact. 
+For decision trees, we could try different levels of pruning. 
+For random forests, we experimented with 100 trees, but we could vary the number of trees and check its impact on accuracy. 
+For nearest neighbors, we used k=5. We could try varying the value of k.
+By trying more classifiers like deep learning architectures.
 
 
 
