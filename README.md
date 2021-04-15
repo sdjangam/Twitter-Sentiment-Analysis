@@ -1,5 +1,12 @@
 # Twitter-Sentiment-Analysis-Project
 
+
+
+the dataset from this link   https://www.kaggle.com/kazanova/sentiment140
+
+
+
+
 # Abstract
 The blast of Web 2.0 has prompted expanded action in Podcasting, Blogging, Tagging, Contributing to RSS, Social Bookmarking, and Social Networking. 
 Subsequently there has been a sudden increase of enthusiasm for individuals to mine these tremendous assets of information for suppositions. Sentiment analysis or Opinion Mining is mining of sentiment polarities from online social media. 
