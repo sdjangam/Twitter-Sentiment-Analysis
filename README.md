@@ -20,7 +20,7 @@ Sentiment analysis classifier could be useful for many applications like market 
 
 Sentiment analysis (SA), also known as opinion mining is the process of classifying the emotion conveyed by a text, for example as negative, positive or neutral.
 Also called as Opinion extraction, Opinion mining, Sentiment mining, Subjectivity analysis
-Applications
+Application
 Movie:  is this review positive or negative?
 Products: what do people think about the new iPhone?
 Public sentiment: how is consumer confidence? Is despair increasing?
